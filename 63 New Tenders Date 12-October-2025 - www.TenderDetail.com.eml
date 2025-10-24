@@ -1,0 +1,3773 @@
+Delivered-To: wintersunset95@gmail.com
+Received: by 2002:a05:622a:4b06:b0:4dc:e2e3:d7f with SMTP id et6csp4538213qtb;
+        Mon, 13 Oct 2025 23:50:27 -0700 (PDT)
+X-Received: by 2002:a17:902:fc46:b0:27e:ef12:6e94 with SMTP id d9443c01a7336-29027418f97mr299703295ad.55.1760424627516;
+        Mon, 13 Oct 2025 23:50:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1760424627; cv=none;
+        d=google.com; s=arc-20240605;
+        b=SBF4Im9kDAQKBP8caTUAYEmL6H+atwh8AR0VBd7H8qnKUpkA98F8y7bPFTFbgRnO0v
+         4DD1SItjmFQtaRwY49tOU2AWVcNwdN3tP0kNgSuMYLCsJdl0RuyUaribbTBR1BuiWRLg
+         cr9fkNS4+Cl9ayCpvL8OY/ZpBanFrpSgDeISHe9/MlcuhfIYgE+wfoN4VazSkAO6sILe
+         RFheK9h1naE+I/etc2+sOQ+LF0xGWTEc7tx+CZSVJRs4A1Ebi9UmZG6TjuhkTzTY6IRy
+         lUObn9VsVWcV3HWx1vK7ikm7lMbVz5MmfeVSE4cCkpj9hZSRR8RfHGW55PRklsUBkX0O
+         hWSg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=+pPrcK5b07AiPpWh1xQp5LT+potIZhQGojT8yUG0qeU=;
+        fh=OyqhoC0ByvaPrlxUZWZeYRLRoDo9l4ckY/+20CpfFHM=;
+        b=LFypo3Wn/JSew2hIoSykdOR7gRxzw/RGRyCyKz8pBAG7eZ/wELzsUojMucWYmKLw4F
+         2oOexVwEpsBS7XnUuL2FszLj7DSx0ceRYPy+y9ZaK/hN6OxzVoPiduxW2asxGzsUx2Lf
+         suXShHc49zBbWFCnofnbJVDVl2HBNlJFrmj1DIqZ9wPfvCbQrhcwHvLKLzs3xF43cCMe
+         xk8mTo4CERR7XeCNKMRGRfJmY9wK5uXhrR7TAjoDFVTS96JHMLBsTkGYIKe8dCUuNDco
+         x/sgaGKWOHMpqIGasFiRGkBUsfOtIb6MLoMqVELbYN2pPjN8zg4ZxfqiuLx2lV1TNOxT
+         82VA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@roadvision.ai header.s=google header.b=gZ3AsSyN;
+       spf=pass (google.com: domain of shubham@roadvision.ai designates 209.85.220.41 as permitted sender) smtp.mailfrom=shubham@roadvision.ai;
+       dara=pass header.i=@gmail.com
+Return-Path: <shubham@roadvision.ai>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d9443c01a7336-29034deca28sor129747435ad.2.2025.10.13.23.50.27
+        for <wintersunset95@gmail.com>
+        (Google Transport Security);
+        Mon, 13 Oct 2025 23:50:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of shubham@roadvision.ai designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@roadvision.ai header.s=google header.b=gZ3AsSyN;
+       spf=pass (google.com: domain of shubham@roadvision.ai designates 209.85.220.41 as permitted sender) smtp.mailfrom=shubham@roadvision.ai;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=roadvision.ai; s=google; t=1760424627; x=1761029427; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=+pPrcK5b07AiPpWh1xQp5LT+potIZhQGojT8yUG0qeU=;
+        b=gZ3AsSyNPbSlSBIUlWwh5vDXp/0dalQkRwIWIhx3XXD/HU7jAJV9SGNeViYDzWWyXH
+         D8sEspaEy4wmdrtOWcyEm4PmH8Wbm0cw22CSptRvF5p7g3xzjRGvqbXzgCUwh5FY1zxU
+         mxHkSYs2muLFlsfzBPSLI+Cq5orpIpkavc0lNRUO/V1enpFeCj1bcT/hb4PxfX4Ehlx6
+         Qa4dATN/mYQxrn0UJN1pOKfU5tfg01Yx7GG2OmxOXm2hxDiS3fp+tTDDdUPZnJIBVVr5
+         w+jdKQScqpEpZMhhe7hXwjYEAszdU4jg/akteUcZ5FKJ5K85X88l/Oh0tf2XwaLgCdtp
+         U7eQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760424627; x=1761029427;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=+pPrcK5b07AiPpWh1xQp5LT+potIZhQGojT8yUG0qeU=;
+        b=hDDxvd6sex2JiLC8XaILyk/bGUrAaYZBZJb6KOFmMPQAOYYKoIQaxRZxkDyKoApVL8
+         FfjXN0DmgYnGvRMRyHa2NMEdHNeqycvH/V/BbE0uES1FgYcKrDe3ayVN52ZjHaAAZCJg
+         pcNfW/vGr9p2xQW88IWLCFLy9LlqTDIRwRYFFT5ivlWdZE16NepXjJMcCuC4UoSN9PIT
+         agtF9IIE962QoRpBOnzP+rVDb5AnlACMz40RousEzrBOmNb7Wo66SIgd7dSSZQSkHxfg
+         ZdSn1K/cyteQySDtnN9re7XSU7EJUqWE+w1Orq2KsRXTldBkToo8IeXC74Jnj7Bt48wB
+         IHrQ==
+X-Gm-Message-State: AOJu0YxrAoG6qL57bRizIMBg1tImVj548EGCKKV3T1cfm2sGCv5fiSzb
+	WnKar3QUhA2XLDE89d7a73Zbo/xzaTfu6hBKKixK1WtbuGAbcd/Uow+QXmRnt9LCeWrZ/fbLvmg
+	x3JeI5u7bkfYgTvaESZBcR4MndWik666ZCNiUrUflPNH6UJtOvmp8mVz0Cg==
+X-Gm-Gg: ASbGnct8RHxe5tAXcUUlLI5g4ONySSB6gIlNPSixlxSmHCqPjHLsEmRBLcf/dmIL1II
+	51jzSB+mmFP02qeV9ivQFnS9gu2nXCD1EFeTQ73kld06k1IpqKKr1ZoHLY/nzZ5PNBO73jGNoJM
+	yJVpcSQMJ6BHBIN7xE8iVZcBRWefUg0eYTk/wBOAI1EAxDvaliTGDSz+mQ5GivAllaMtZTt+ClA
+	iospmbnQRkuTczlTIZ66UgKpw+Q6LR6n/wsudO2wCWheZF3gKkTWB5/UGJg
+X-Google-Smtp-Source: AGHT+IFjP4FLErSkw3ICPaZihEkvZdavHOeU7J2/QFk7H0X/O87VpLQGBGKI24e7xGRKciZlmwnU/9ydqkYZaCYNqBI=
+X-Received: by 2002:a17:903:3c2b:b0:24b:62ef:9d38 with SMTP id
+ d9443c01a7336-29027379a32mr323822605ad.19.1760424626321; Mon, 13 Oct 2025
+ 23:50:26 -0700 (PDT)
+MIME-Version: 1.0
+References: <20251011145104.EA81DC000084@smtppr-ak-mum2.pepipost.com> <CAGZ-gSEk15d6esg0EVR+yEnY0MPjphtgBXOxjdg3r711bSyU_g@mail.gmail.com>
+In-Reply-To: <CAGZ-gSEk15d6esg0EVR+yEnY0MPjphtgBXOxjdg3r711bSyU_g@mail.gmail.com>
+From: Shubham Kanojia <shubham@roadvision.ai>
+Date: Tue, 14 Oct 2025 12:20:14 +0530
+X-Gm-Features: AS18NWBZFE9wU9TIgVwAnn9Eqyvs5-HCHLVO0ZZzX5mqbfkLP4I9AyIIeSFrn-c
+Message-ID: <CACf_6smBfgCupWyS1bW7+-URhwQ0o349qrckchr_Rit2rYD8Nw@mail.gmail.com>
+Subject: Fwd: 63 New Tenders Date 12-October-2025 - www.TenderDetail.com
+To: "wintersunset95@gmail.com" <wintersunset95@gmail.com>
+Content-Type: multipart/mixed; boundary="00000000000081a29f064118cc91"
+
+--00000000000081a29f064118cc91
+Content-Type: multipart/alternative; boundary="00000000000081a29e064118cc8f"
+
+--00000000000081a29e064118cc8f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: Hardik Dave <hardik@roadvision.ai>
+Date: Mon, 13 Oct 2025 at 14:39
+Subject: Fwd: 63 New Tenders Date 12-October-2025 - www.TenderDetail.com
+To: Shubham Kanojia <shubham@roadvision.ai>
+
+
+
+Kind regards
+Hardik Dave
+Founder & CEO | RoadVision AI
+Mob: +91 9768725607 ; Email: hardik@roadvision.ai
+Office: B-310, Ansal Chamber-1, Bhikaji Cama Place, Delhi;
+Website: www.roadvision.ai
+[image: twitter] <https://twitter.com/RoadvisionAI> [image: linkedin]
+<https://www.linkedin.com/company/roadvisionai/>
+
+
+---------- Forwarded message ---------
+From: <tenders@tenderdetail.com>
+Date: Sat, 11 Oct 2025 at 20:21
+Subject: 63 New Tenders Date 12-October-2025 - www.TenderDetail.com
+To: <hardik@indikaai.com>
+Cc: <simran@indikaai.com>, <shradha@agrimadvisors.com>, <Sales@roadvision.a=
+i>,
+<Priyansh.negi@predco.ai>, <Kamal.Vashisht@icloud.com>, <
+tanisha@panscience.xyz>, <shradha@indikaai.com>, <govind@roadvision.ai>, <
+hardik@roadvision.ai>, <prateeksha@roadvision.ai>
+
+
+ To prevent mailers from going into the junk folder, Please add
+tenders@tenderdetail.com
+ If you cannot see this message click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQ=
+DglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK>
+to view in your browser
+*TenderDetail*
+* .com Indian Tenders * New Tenders
+12-10-2025
+For Customer Support
+(+91) 76 00 30 77 88
+(+91) 76 00 60 33 44
+
+*Dear Mr. Hardik Dave* ,
+INDIKA AI PRIVATE LIMITED * 63 New Tenders Related to Your Business *
+*Query * *No of Tenders Found * *View *
+AI/Block Chain 5 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYA=
+AQJeBVZWUAZQVgUADwQFAglRWFYHAwFQUgNVAgYBVVIGAV5TBQNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+h/TiZUXFoNQXJZVw9Y>*
+Data Annotation 0
+DIGITALIZATION WORK 23 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgBV=
+U1NRAgIDVlcDUAUGW1BZVQBSWlNRAFUCUg4BB1daVFAHCQdTVlBIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+1/Ji1scnUvO3Blfyl4FmZ6MCo=3D>*
+ITMS 0
+Digital Twin 0
+GIS GPR Survey 11 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMF=
+UgQDU11SVgUHVlBVC1BXVgtXWFAAUFJXVlQGBVFXAAQBU1RXBwFIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+5/MkR/Y2tGMkRDQANP>*
+Road/Bridge Audit 0
+Network Survey Veh. 0
+Pavement audit 0
+road safety Tenders 7 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUE=
+AwNUB1xXUQICXVAAAAADVgsGWl9YAANTVlIDCAQHBVFSAwdQUANIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEk=
+tZAAAYQFgABEVIFjJTWFVQEBI=3D>*
+AI Related 5 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlIA=
+AFUFBlZSVVcBXAdXCwdUVggEWAQFAVdUVgNQBVNXWFAGCFMGUARIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+h/QTZdX1gSBFU=3D>*
+Litigation Managemen 0
+Data Analytic 6 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlFS=
+AVVeVl1RBlMDBlUBC1VVUQEADl5SU1AFUg8PUgFaVwxRAwIAXV1IXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+1XFQUYclcHDUhFXwU=3D>*
+Natural Language Pro 0
+Infrastructure 1 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgRR=
+BgkDB1VRAwYGAVFVCQRSBQ0CXVUAB1cAXgcOU1BXB1YEAgMBB1VIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+BYBxZZQE0UFFJFQxRT>*
+Smart City 0
+Traffic management 5 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlNX=
+UlQDVwJVAQ9UB1YAXwFYBg8ECQRTAQUBUldTCFBUVgBUBlBRVAZIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEm=
+1EAAJeWlpGDFBfVwFTW1RbFg=3D=3D>*
+HIMS 0
+Clinical Decision Su 0
+Automated Auditing S 0
+Defence and Security 0
+Education and workfo 0
+Click Here To View All 63 New Tenders 12-10-2025
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQ=
+DglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK>
+*AI/Block Chain (5) *
+1. Railtel Corporation Of India Limited Visakhapatnam - Andhra Pradesh
+
+*TDR : 51655667* * Corrigendum :*Supply Installation And Commissioning For
+Smart Video Surveillance, *Artificial* *Intelligence* (*Ai*)/*Machine*
+*Learning* (Ml) *Based* Video Analytics (Va)
+
+*Tender Value:* 30.40 Crore
+*Due Date:* 01-Nov-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMC=
+VlQEAFFVVw4PUQsECAICAAtWXwAEAAdXUwQPVQIDUgABAFAKBQZIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSDQYPUFYedAMjBAIDcCBMDAIBVB9QJ3V3G1wAcw=
+4bJ1YBBQBUI3cIclYGGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+2. Tripura Jal Board Agartala - Tripura
+
+*TDR : 51705827* providing and installation of pipeline inspection crawler
+robot, a non-motorised inspection camera for pipe line inspection and *ai*
+*based* assessment technology
+
+*Tender Value:* 2.62 Crore
+*Due Date:* 27-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgcC=
+UwEHV10HUA8EBgcGCwBWXVsDAFUCBQAOU1JVVA1aUlYOBQICVF1IXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BTCAYBVFYeBHNTBQZ3DSZMB3YHUB9QJAYFG113Bg=
+4bUSEIdntUU3MFAlN0GQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+3. All India Institute Of Medical Sciences Mangalagiri - Andhra Pradesh
+
+*TDR : 51690490* supply of battery-operated x-ray *machine* with
+*artificial* *intelligence* *software* turnkey project for the department
+of radio diagnosis. , battery-operated x-ray *machine* with *artificial*
+*intelligence*
+
+*Tender Value:* 2.40 Crore
+*Due Date:* 10-Nov-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYH=
+AgMEBVUBBAADUgQAWwFSBVpSDlcDUwFXUA4CB1MGAFECA1cLVFxIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSAQMNX1EedAFSDnQAAFdMBXVyIx9QUnYDGycKBw=
+sbUFR7dQxWJHMJAyJyGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+4. Madhya Pradesh Madhya Kshetra Vidyut Vitaran Company Limited Madhya
+Pradesh
+
+*TDR : 51689806* , 1 kv 35 a single phase bridge rectifier diode electronic
+components spanner set tapariya ring type spanner set fix type nylon rope,
+nylon rope size 22 mm chain *block*, *chain* block 1.5 ton 10 meter
+
+*Tender Value:* Ref.Document
+*Due Date:* 14-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlAG=
+BQkAUVcEAVNQAQoDC1IEV14LWF5RBAcCVFQEBQUGUlAOBgMGUlJIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSAAoBVlceAw4kdXRwdiBMAgAGVx9QUgByG1wGAX=
+gbWSYKBgtWUXJ1AF5yGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+5. Indian Navy Kachchh - Gujarat
+
+*TDR : 51565425* * Corrigendum :*Bids Are Invited For Procurement Of *Ai*
+*Based* Intrusion Detection *Systems* And Services , Taut Wire Intrusion
+Detection *System* (Mha) Total Quantity : 1
+
+*Tender Value:* Ref.Document
+*Due Date:* 18-Oct-2025
+Tender Document * Gem Tender *
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYA=
+AlIFBwddUVJVAARUCwRZXQ4EDVJVBFBVXgICVwIDVQFTAF4HU1ZIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BRDgYNVFQeBA8lcnRwdiZMBXEFVh9QUQEAG1xyAg=
+4bUFR7dgAgInJ0A1J1GQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+*DIGITALIZATION WORK (5) *
+1. South Western Railway Hubbali - Karnataka
+
+*TDR : 51700747* tender for design, customization, implementation,
+operations & maintenance support of integrated project *management* and
+*information* *system* (pmis) for various projects under south western
+railway
+
+*Tender Value:* 6.66 Crore
+*Due Date:* 25-Nov-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlVR=
+BghUU1JVBwVVXAEACVMFXF4EX18HCFQCAA8OUlMBUAIBUl9WVARIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BTCAMOUlYedABecAQDAFJMAnICJx9QJg13GyQHAH=
+gbI1Z8cnxWJwEAd1EBGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+2. Gujarat State Electricity Corporation Limited Kheda - Gujarat
+
+*TDR : 51689229* tender for the job work of *scanning*/ inspection work of
+economizer and ltsh coils by rfet technique/eci technique in all 210 mw
+units at wtps - gsecl during aoh/coh and as and when required basis .
+
+*Tender Value:* 48 Lakhs
+*Due Date:* 28-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUA=
+UwlSAVJWBAdQXAMIWw4CVVxWXVUCVFVSUQBQVFdQAgECVlYKUQNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSAAoLVFgedQRRD3d3d1VMBAUJXh9QXQ0OGycLBn=
+gbVVwICw9eVQUDdV90GQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+3. Department Of Local Bodies Jaipur - Rajasthan
+
+*TDR : 51558028* * Corrigendum :*Tender For *Digitalization* Of Garage And
+Integrated *Management* *System*.
+
+*Tender Value:* 35 Lakhs
+*Due Date:* 27-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlkF=
+AwcHAABRDQJXAFVXAVADXAgEW19SBwIOA1QHU1ADUFEGBgNWXVJIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BRDQsJVFkec3Bfdw90AVRMdgF0Jx9QVAMEGydwCQ=
+kbUCALAgEjUAkHdyMCGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+4. Jaipur Municipal Corporation Jaipur - Rajasthan
+
+*TDR : 51550871* * Corrigendum :*tender for *Digitalization* Of Garage And
+Integrated *Management* *System*. Nit No. 23 Dc Garrage Greater
+
+*Tender Value:* 35 Lakhs
+*Due Date:* 13-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlgA=
+VQAHUVAAAlIOVgoGAAECBloCC1ZSUgEGU1MPUlMEAgRUBldWAlNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BRDQMBUVAeBXRQAQEGdlJMDAABXh9QUXB0GycCBg=
+4bVSAPBg5VJAcFDyUPGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+5. Medical Education Department Lucknow - Uttar Pradesh
+
+*TDR : 51428043* * Corrigendum :*Bids Are Invited For *Scanning* Laser
+Therapy (Q3) Total Quantity : 1
+
+*Tender Value:* 24 Lakhs
+*Due Date:* 22-Oct-2025
+Tender Document * Gem Tender *
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlcB=
+UwAAVgUAVw9UXAVQWldZVwlQWlQFBFIBXgQDAAxSUVIHBlcGBVNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BQCgsJUlIeAgVfBHQDd1VMdgUEIh9QJHAAG10DCA=
+sbWCZ5An1TVHQHBFUCGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+*Note: * *Click here*
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQ=
+DglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK>
+*
+To View 63 New Tenders Available as per Your Preference. *
+
+For further assistance or query please feel free to write to us on
+*care@tenderdetail.com* <care@tenderdetail.com> or call us on phone numbers
+given below.
+Your valued suggestions and feedback will help us to serve you better.
+We assure our best services.
+
+Warm Regards,
+*www.TenderDetail.com*
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMH=
+B1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaAwdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=3D=
+=3D>
+Support Team | CNET Technologies | TenderDetail.com
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMH=
+B1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaAwdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=3D=
+=3D>
+Ph : (+91) 7600307788,(+91) 7600603344
+E-mail Id : *care@tenderdetail.com* <care@tenderdetail.com>
+To Unsubscribe Tender Alerts, click here <unsubscribe@tenderdetail.com>
+*Disclaimer:* The information in this message is confidential and may be
+privileged. It is intended solely for the addressee. Access to this
+message by anyone else is unauthorized. If you are not the intended
+recipient, any disclosure, copying, or distribution of the message,
+or any action or omission taken by you in reliance on it, is prohibited and
+may be unlawful.
+
+--00000000000081a29e064118cc8f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote gmail_quote_container"><=
+div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message ---------=
+<br>From: <strong class=3D"gmail_sendername" dir=3D"auto">Hardik Dave</stro=
+ng> <span dir=3D"auto">&lt;<a href=3D"mailto:hardik@roadvision.ai">hardik@r=
+oadvision.ai</a>&gt;</span><br>Date: Mon, 13 Oct 2025 at 14:39<br>Subject: =
+Fwd: 63 New Tenders Date 12-October-2025 - <a href=3D"http://www.TenderDeta=
+il.com">www.TenderDetail.com</a><br>To: Shubham Kanojia &lt;<a href=3D"mail=
+to:shubham@roadvision.ai">shubham@roadvision.ai</a>&gt;<br></div><br><br><d=
+iv dir=3D"ltr"><div><br clear=3D"all"></div><div><div dir=3D"ltr" class=3D"=
+gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"color:rgb(0,0,0)=
+;font-size:inherit;border-collapse:collapse!important"><tbody><tr><td><tabl=
+e cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"font-size:inher=
+it;border-collapse:collapse!important"><tbody><tr><td style=3D"font-family:=
+Helvetica,sans-serif;padding-bottom:6px;font-size:13px"><font face=3D"trebu=
+chet ms, sans-serif">Kind regards</font></td></tr><tr><td style=3D"font-fam=
+ily:Helvetica,sans-serif;font-weight:700;color:rgb(6,18,225);font-size:14px=
+"><font face=3D"trebuchet ms, sans-serif">Hardik Dave</font></td></tr><tr><=
+td style=3D"padding:6px 0px;border-bottom:1px solid rgb(51,51,51)"><table c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"font-size:inherit;=
+border-collapse:collapse!important"><tbody><tr><td style=3D"font-family:Hel=
+vetica,sans-serif;font-size:13px"><font face=3D"trebuchet ms, sans-serif">F=
+ounder &amp; CEO |</font></td><td style=3D"font-family:Helvetica,sans-serif=
+;padding-left:8px;font-size:13px"><font face=3D"trebuchet ms, sans-serif">R=
+oadVision AI</font></td></tr></tbody></table></td></tr><tr><td style=3D"pad=
+ding-top:6px"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"font-size:inherit;border-collapse:collapse!important"><tbody><tr><td st=
+yle=3D"font-family:Helvetica,sans-serif;font-size:13px"><font face=3D"trebu=
+chet ms, sans-serif">Mob: +91 9768725607 ; Email:</font></td><td style=3D"p=
+adding-left:10px"><a href=3D"mailto:hardik@roadvision.ai" style=3D"font-wei=
+ght:inherit!important;color:rgb(0,0,0)!important;font-size:13px!important;l=
+ine-height:inherit!important" target=3D"_blank"><font face=3D"trebuchet ms,=
+ sans-serif">hardik@roadvision.ai</font></a></td></tr></tbody></table></td>=
+</tr><tr><td style=3D"padding-top:6px"><table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"font-size:inherit;border-collapse:collapse!imp=
+ortant"><tbody><tr><td style=3D"font-family:Helvetica,sans-serif;font-size:=
+13px"><font face=3D"trebuchet ms, sans-serif">Office: B-310, Ansal Chamber-=
+1, Bhikaji Cama Place, Delhi; <br>Website: <a href=3D"http://www.roadvision=
+.ai" target=3D"_blank">www.roadvision.ai</a>=C2=A0</font></td><td style=3D"=
+padding-left:11px"></td></tr></tbody></table></td></tr><tr><td style=3D"pad=
+ding-top:12px"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"font-size:inherit;border-collapse:collapse!important"><tbody><tr><td s=
+tyle=3D"font-size:0px;line-height:0px;padding-right:10px"><a href=3D"https:=
+//twitter.com/RoadvisionAI" style=3D"font-weight:inherit!important;font-siz=
+e:inherit!important;line-height:inherit!important" target=3D"_blank"><font =
+face=3D"trebuchet ms, sans-serif"><img src=3D"https://woodpecker.co/cdn-cgi=
+/imagedelivery/dbHg18raJkJAbxhrT08asw/6a534444-5886-45fb-5406-6a08f31af200/=
+public" alt=3D"twitter" width=3D"20" height=3D"20" style=3D"height:20px;max=
+-width:100%;border:0px;line-height:0px;outline:none;width:20px"></font></a>=
+</td><td style=3D"font-size:0px;line-height:0px;padding-right:10px"><a href=
+=3D"https://www.linkedin.com/company/roadvisionai/" style=3D"font-weight:in=
+herit!important;font-size:inherit!important;line-height:inherit!important" =
+target=3D"_blank"><font face=3D"trebuchet ms, sans-serif"><img src=3D"https=
+://woodpecker.co/cdn-cgi/imagedelivery/dbHg18raJkJAbxhrT08asw/59f9bf1c-000e=
+-471b-3e4d-58386cf6c000/public" alt=3D"linkedin" width=3D"20" height=3D"20"=
+ style=3D"height:20px;max-width:100%;border:0px;line-height:0px;outline:non=
+e;width:20px"></font></a></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr></tbody></table></div></div></div><br><br><div class=3D"gmail_q=
+uote"><div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message --=
+-------<br>From: <span dir=3D"auto">&lt;<a href=3D"mailto:tenders@tenderdet=
+ail.com" target=3D"_blank">tenders@tenderdetail.com</a>&gt;</span><br>Date:=
+ Sat, 11 Oct 2025 at 20:21<br>Subject: 63 New Tenders Date 12-October-2025 =
+- <a href=3D"http://www.TenderDetail.com" target=3D"_blank">www.TenderDetai=
+l.com</a><br>To:  &lt;<a href=3D"mailto:hardik@indikaai.com" target=3D"_bla=
+nk">hardik@indikaai.com</a>&gt;<br>Cc:  &lt;<a href=3D"mailto:simran@indika=
+ai.com" target=3D"_blank">simran@indikaai.com</a>&gt;,  &lt;<a href=3D"mail=
+to:shradha@agrimadvisors.com" target=3D"_blank">shradha@agrimadvisors.com</=
+a>&gt;,  &lt;<a href=3D"mailto:Sales@roadvision.ai" target=3D"_blank">Sales=
+@roadvision.ai</a>&gt;,  &lt;<a href=3D"mailto:Priyansh.negi@predco.ai" tar=
+get=3D"_blank">Priyansh.negi@predco.ai</a>&gt;,  &lt;<a href=3D"mailto:Kama=
+l.Vashisht@icloud.com" target=3D"_blank">Kamal.Vashisht@icloud.com</a>&gt;,=
+  &lt;<a href=3D"mailto:tanisha@panscience.xyz" target=3D"_blank">tanisha@p=
+anscience.xyz</a>&gt;,  &lt;<a href=3D"mailto:shradha@indikaai.com" target=
+=3D"_blank">shradha@indikaai.com</a>&gt;,  &lt;<a href=3D"mailto:govind@roa=
+dvision.ai" target=3D"_blank">govind@roadvision.ai</a>&gt;,  &lt;<a href=3D=
+"mailto:hardik@roadvision.ai" target=3D"_blank">hardik@roadvision.ai</a>&gt=
+;,  &lt;<a href=3D"mailto:prateeksha@roadvision.ai" target=3D"_blank">prate=
+eksha@roadvision.ai</a>&gt;<br></div><br><br><u></u>
+
+
+   =20
+   =20
+
+
+
+<div>
+    <div>
+        <table style=3D"width:100%;background:white none repeat scroll 0% 0=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <table style=3D"width:100.0%;background:white" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                            <tbody>
+                                <tr>
+                                    <td style=3D"padding:0px 0px" align=3D"=
+right">
+                                        <span style=3D"font-size:7.5pt;font=
+-family:Arial,Helvetica,sans-serif;color:black">
+                                            =C2=A0To
+                                            prevent mailers from going into=
+ the junk folder, Please add <a href=3D"mailto:tenders@tenderdetail.com" ta=
+rget=3D"_blank">tenders@tenderdetail.com</a>
+                                        </span><span style=3D"font-size:8.5=
+pt;font-family:Arial,Helvetica,sans-serif;color:#999999">
+                                            <br>
+                                        </span><span style=3D"font-size:7.5=
+pt;font-family:Arial,Helvetica,sans-serif;color:black">=C2=A0If you cannot =
+see this message <a href=3D"https://delivery.tenderdetail.com/ANFUXESBC?id=
+=3D146143=3DIk0BB1IABwUGHldQDglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVV=
+UUFNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQF=
+RHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5=
+CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVU=
+wFCANQGw8FBVZMDQYDAlddUFVUVFIK" target=3D"_blank">click here</a> to view in=
+ your browser</span><span style=3D"font-size:8.5pt;font-family:Arial,Helvet=
+ica,sans-serif;color:#999999"> </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:15px 0">
+                                        <table style=3D"width:100.0%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <strong><i><span st=
+yle=3D"font-size:17.0pt;font-family:&#39;Arial Bold&#39;,Gadget,sans-serif"=
+>TenderDetail</span></i></strong><i>
+                                                            <span style=3D"=
+font-size:13.5pt;font-family:&#39;Arial Black&#39;,Gadget,sans-serif;color:=
+#dc872b">.com</span><span style=3D"font-family:&#39;Arial Black&#39;,Gadget=
+,sans-serif">
+                                                                <br>
+                                                            </span><span st=
+yle=3D"font-size:13.5pt;color:#0572af">Indian Tenders</span>
+                                                        </i>
+                                                    </td>
+                                                    <td align=3D"right">
+                                                        <span style=3D"font=
+-size:13.5pt;font-family:Arial,Helvetica,sans-serif;color:#0572af">
+                                                            New
+                                                            Tenders
+                                                        </span><span style=
+=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+                                                            <br>
+                                                            <span style=3D"=
+color:#0572af">12-10-2025</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:0px 0px" align=3D"=
+right">
+                                        <span style=3D"font-size:13.5pt;fon=
+t-family:Arial,Helvetica,sans-serif;color:#0572af">For Customer Support</sp=
+an><br>
+                                        <span style=3D"font-size:13.5pt;fon=
+t-family:Arial,Helvetica,sans-serif;color:#0572af">(+91) 76 00 30 77 88</sp=
+an><br>
+                                        <span style=3D"font-size:13.5pt;fon=
+t-family:Arial,Helvetica,sans-serif;color:#0572af">(+91) 76 00 60 33 44</sp=
+an><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        =C2=A0
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table style=3D"width:100.0%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <b><span style=3D"f=
+ont-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af">Dear M=
+r. Hardik Dave</span></b><span style=3D"font-size:9.0pt;font-family:Arial,H=
+elvetica,sans-serif;color:#0572af">
+                                                            ,<br>
+                                                            INDIKA AI PRIVA=
+TE LIMITED
+                                                        </span>
+                                                    </td>
+                                                    <td style=3D"padding:0i=
+n 0in 0in 0in" align=3D"right">
+                                                        <b>
+                                                            <span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af">
+                                                                63
+                                                                New Tenders=
+ Related to Your Business
+                                                            </span>
+                                                        </b>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;p=
+adding:0in 0in 0in 0in;height:7.5pt" width=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table style=3D"background:rgb(204,=
+204,204) none repeat scroll 0% 0%;font-family:Arial,Helvetica,sans-serif;wi=
+dth:100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"1">
+                                            <tbody>
+                                                <tr>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:left;width:100px"><b style=3D"font-size:9.=
+0pt;font-family:Arial,Helvetica,sans-serif;color:white">Query </b></td>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center;width:70px"><b style=3D"font-size:9=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:white">No of Tenders Foun=
+d </b></td>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center;width:70px"><b style=3D"font-size:9=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:white">View </b></td>
+                                                </tr>
+                                                <tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">AI/Block Chain</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">5</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYAAQJeBVZW=
+UAZQVgUADwQFAglRWFYHAwFQUgNVAgYBVVIGAV5TBQNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEnh/Ti=
+ZUXFoNQXJZVw9Y" style=3D"color:#0572af" target=3D"_blank">Click here</a></s=
+trong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Data Annotation</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">DIGITALIZATION WORK</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">23</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgBVU1NRAgID=
+VlcDUAUGW1BZVQBSWlNRAFUCUg4BB1daVFAHCQdTVlBIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn1/Ji=
+1scnUvO3Blfyl4FmZ6MCo=3D" style=3D"color:#0572af" target=3D"_blank">Click h=
+ere</a></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">ITMS</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Digital Twin</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">GIS GPR Survey</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">11</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMFUgQDU11S=
+VgUHVlBVC1BXVgtXWFAAUFJXVlQGBVFXAAQBU1RXBwFIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn5/Mk=
+R/Y2tGMkRDQANP" style=3D"color:#0572af" target=3D"_blank">Click here</a></s=
+trong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Road/Bridge Audit</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Network Survey Veh.</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Pavement audit</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">road safety Tenders</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">7</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUEAwNUB1xX=
+UQICXVAAAAADVgsGWl9YAANTVlIDCAQHBVFSAwdQUANIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEktZAA=
+AYQFgABEVIFjJTWFVQEBI=3D" style=3D"color:#0572af" target=3D"_blank">Click h=
+ere</a></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">AI Related</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">5</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlIAAFUFBlZS=
+VVcBXAdXCwdUVggEWAQFAVdUVgNQBVNXWFAGCFMGUARIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEnh/QT=
+ZdX1gSBFU=3D" style=3D"color:#0572af" target=3D"_blank">Click here</a></str=
+ong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Litigation Managemen</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Data Analytic</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">6</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlFSAVVeVl1R=
+BlMDBlUBC1VVUQEADl5SU1AFUg8PUgFaVwxRAwIAXV1IXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn1XFQ=
+UYclcHDUhFXwU=3D" style=3D"color:#0572af" target=3D"_blank">Click here</a><=
+/strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Natural Language Pro</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Infrastructure</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">1</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgRRBgkDB1VR=
+AwYGAVFVCQRSBQ0CXVUAB1cAXgcOU1BXB1YEAgMBB1VIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEnBYBx=
+ZZQE0UFFJFQxRT" style=3D"color:#0572af" target=3D"_blank">Click here</a></s=
+trong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Smart City</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Traffic management</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">5</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlNXUlQDVwJV=
+AQ9UB1YAXwFYBg8ECQRTAQUBUldTCFBUVgBUBlBRVAZIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEm1EAA=
+JeWlpGDFBfVwFTW1RbFg=3D=3D" style=3D"color:#0572af" target=3D"_blank">Click=
+ here</a></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">HIMS</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Clinical Decision Su</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Automated Auditing S</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Defence and Security</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Education and workfo</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;b=
+order-top:solid #cedbdc 1.0pt;padding:0in 0in 0in 0in;height:7.5pt" width=
+=3D"100%"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style=3D"width:100%;background:white none repeat scroll 0% 0=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+            <tbody>
+                <tr>
+                    <td style=3D"background:#dc872b;width:100%;font-size:16=
+px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;padding:10px;col=
+or:white;text-align:center">
+
+                        <a href=3D"https://delivery.tenderdetail.com/ANFUXE=
+SBC?id=3D146143=3DIk0BB1IABwUGHldQDglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bU=
+wYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5V=
+UwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFR=
+hUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJ=
+AQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK" style=3D"color:white" target=3D"_blan=
+k">
+                            <span>
+                                Click Here To View All 63 New Tenders 12-10=
+-2025
+                            </span>
+                        </a>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style=3D"width:100%;background:white none repeat scroll 0% 0=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <table style=3D"width:100.0%;background:white" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                            <tbody>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;p=
+adding:0in 0in 0in 0in;height:7.5pt" width=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table style=3D"background:#cccccc;=
+max-width:100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"1" width=3D"1=
+00%">
+                                            <tbody>
+
+                                                  <tr>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center"><b style=3D"font-size:9.0pt;font-f=
+amily:Arial,Helvetica,sans-serif;color:white">AI/Block Chain (5) </b></td>
+                                                </tr> <tr style=3D"backgrou=
+nd:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">1. Railtel Corp=
+oration Of India Limited </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Visakhapatnam -  Andhra Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51655667</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Supply Installation And Commis=
+sioning For Smart Video Surveillance, <b style=3D"color:red">Artificial</b>=
+ <b style=3D"color:red">Intelligence</b> (<b style=3D"color:red">Ai</b>)/<b=
+ style=3D"color:red">Machine</b> <b style=3D"color:red">Learning</b> (Ml) <=
+b style=3D"color:red">Based</b> Video Analytics (Va)
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 30.4=
+0 Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 01-Nov-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMCVlQEAFFVVw4PUQsECAICAAtWX=
+wAEAAdXUwQPVQIDUgABAFAKBQZIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSDQYPUFYedAMjBAIDcCBMDAIBVB9QJ3V3G1wAcw4bJ1YBBQBUI3cIclYGG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">2. Tripura Jal =
+Board </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Agartala -  Tripura</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51705827</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> provid=
+ing and installation of pipeline inspection crawler robot, a non-motorised =
+inspection camera for pipe line inspection and <b style=3D"color:red">ai</b=
+> <b style=3D"color:red">based</b> assessment technology
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 2.62=
+ Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 27-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgcCUwEHV10HUA8EBgcGCwBWXVsDA=
+FUCBQAOU1JVVA1aUlYOBQICVF1IXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BTCAYBVFYeBHNTBQZ3DSZMB3YHUB9QJAYFG113Bg4bUSEIdntUU3MFAlN0G=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">3. All India In=
+stitute Of Medical Sciences </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Mangalagiri -  Andhra Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51690490</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> supply=
+ of battery-operated x-ray <b style=3D"color:red">machine</b> with <b style=
+=3D"color:red">artificial</b> <b style=3D"color:red">intelligence</b> <b st=
+yle=3D"color:red">software</b> turnkey project for the department of radio =
+diagnosis. , battery-operated x-ray <b style=3D"color:red">machine</b> with=
+ <b style=3D"color:red">artificial</b> <b style=3D"color:red">intelligence<=
+/b>
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 2.40=
+ Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 10-Nov-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYHAgMEBVUBBAADUgQAWwFSBVpSD=
+lcDUwFXUA4CB1MGAFECA1cLVFxIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSAQMNX1EedAFSDnQAAFdMBXVyIx9QUnYDGycKBwsbUFR7dQxWJHMJAyJyG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">4. Madhya Prade=
+sh Madhya Kshetra Vidyut Vitaran Company Limited </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+> Madhya Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51689806</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> , 1 kv=
+ 35 a single phase bridge rectifier diode electronic components spanner set=
+ tapariya ring type spanner set fix type nylon rope, nylon rope size 22 mm =
+chain <b style=3D"color:red">block</b>, <b style=3D"color:red">chain</b> bl=
+ock 1.5 ton 10 meter
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> Ref.=
+Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 14-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlAGBQkAUVcEAVNQAQoDC1IEV14LW=
+F5RBAcCVFQEBQUGUlAOBgMGUlJIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSAAoBVlceAw4kdXRwdiBMAgAGVx9QUgByG1wGAXgbWSYKBgtWUXJ1AF5yG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">5. Indian Navy =
+</span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Kachchh -  Gujarat</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51565425</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Bids Are Invited For Procureme=
+nt Of <b style=3D"color:red">Ai</b> <b style=3D"color:red">Based</b> Intrus=
+ion Detection <b style=3D"color:red">Systems</b> And Services , Taut Wire I=
+ntrusion Detection <b style=3D"color:red">System</b> (Mha) Total Quantity :=
+ 1
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> Ref.=
+Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 18-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document <b> Gem Tender </b>=
+</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYAAlIFBwddUVJVAARUCwRZXQ4ED=
+VJVBFBVXgICVwIDVQFTAF4HU1ZIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BRDgYNVFQeBA8lcnRwdiZMBXEFVh9QUQEAG1xyAg4bUFR7dgAgInJ0A1J1G=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+  <tr>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center"><b style=3D"font-size:9.0pt;font-f=
+amily:Arial,Helvetica,sans-serif;color:white">DIGITALIZATION WORK (5) </b><=
+/td>
+                                                </tr> <tr style=3D"backgrou=
+nd:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">1. South Wester=
+n Railway </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Hubbali -  Karnataka</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51700747</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> tender=
+ for design, customization, implementation, operations &amp; maintenance su=
+pport of integrated project <b style=3D"color:red">management</b> and <b st=
+yle=3D"color:red">information</b> <b style=3D"color:red">system</b> (pmis) =
+for various projects under south western railway=20
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 6.66=
+ Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 25-Nov-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlVRBghUU1JVBwVVXAEACVMFXF4EX=
+18HCFQCAA8OUlMBUAIBUl9WVARIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BTCAMOUlYedABecAQDAFJMAnICJx9QJg13GyQHAHgbI1Z8cnxWJwEAd1EBG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">2. Gujarat Stat=
+e Electricity Corporation Limited </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Kheda -  Gujarat</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51689229</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> tender=
+ for the job work of <b style=3D"color:red">scanning</b>/ inspection work o=
+f economizer and ltsh coils by rfet technique/eci technique in all 210 mw u=
+nits at wtps - gsecl during aoh/coh and as and when required basis .
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 48 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 28-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUAUwlSAVJWBAdQXAMIWw4CVVxWX=
+VUCVFVSUQBQVFdQAgECVlYKUQNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSAAoLVFgedQRRD3d3d1VMBAUJXh9QXQ0OGycLBngbVVwICw9eVQUDdV90G=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">3. Department O=
+f Local Bodies </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Jaipur -  Rajasthan</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51558028</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Tender For <b style=3D"color:r=
+ed">Digitalization</b> Of Garage And Integrated <b style=3D"color:red">Mana=
+gement</b> <b style=3D"color:red">System</b>.
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 35 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 27-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlkFAwcHAABRDQJXAFVXAVADXAgEW=
+19SBwIOA1QHU1ADUFEGBgNWXVJIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BRDQsJVFkec3Bfdw90AVRMdgF0Jx9QVAMEGydwCQkbUCALAgEjUAkHdyMCG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">4. Jaipur Munic=
+ipal Corporation </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Jaipur -  Rajasthan</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51550871</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>tender for <b style=3D"color:r=
+ed">Digitalization</b> Of Garage And Integrated <b style=3D"color:red">Mana=
+gement</b> <b style=3D"color:red">System</b>. Nit No. 23 Dc Garrage Greater
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 35 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 13-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlgAVQAHUVAAAlIOVgoGAAECBloCC=
+1ZSUgEGU1MPUlMEAgRUBldWAlNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BRDQMBUVAeBXRQAQEGdlJMDAABXh9QUXB0GycCBg4bVSAPBg5VJAcFDyUPG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">5. Medical Educ=
+ation Department </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Lucknow -  Uttar Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51428043</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Bids Are Invited For <b style=
+=3D"color:red">Scanning</b> Laser Therapy (Q3) Total Quantity : 1
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 24 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 22-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document <b> Gem Tender </b>=
+</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlcBUwAAVgUAVw9UXAVQWldZVwlQW=
+lQFBFIBXgQDAAxSUVIHBlcGBVNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BQCgsJUlIeAgVfBHQDd1VMdgUEIh9QJHAAG10DCAsbWCZ5An1TVHQHBFUCG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;b=
+order-top:solid #cedbdc 1.0pt;padding:0in 0in 0in 0in;height:7.5pt" width=
+=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:0in 0 7.5pt 0" val=
+ign=3D"top">
+                                        <strong><span style=3D"font-size:9.=
+0pt;font-family:Arial,Helvetica,sans-serif">Note: </span></strong><span sty=
+le=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+                                            <a href=3D"https://delivery.ten=
+derdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQDglWUFEHVVdUBgIHCVRYX=
+F0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIO=
+BlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=
+=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEVTCFJTQ0ZNVQM=
+GA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK" target=3D"_blank=
+"><b><span style=3D"color:#0572af;text-decoration:none">Click here</span></=
+b></a> <strong>
+                                                <span style=3D"font-family:=
+Arial,Helvetica,sans-serif">
+                                                    To View 63 New Tenders =
+Available
+                                                    as per Your Preference.
+                                                </span>
+                                            </strong>
+                                            <br>
+                                            <br>
+                                            For further assistance or query=
+ please feel free to write to us on <a href=3D"mailto:care@tenderdetail.com=
+" target=3D"_blank"><b><span style=3D"color:#0572af;text-decoration:none">c=
+are@tenderdetail.com</span></b></a> or call us on
+                                            phone numbers given below.<br>
+                                            Your valued suggestions and fee=
+dback will help us to serve you better.<br>
+                                            We assure our best services.
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;b=
+order-top:solid #cedbdc 1.0pt;padding:0in 0in 0in 0in;height:7.5pt" width=
+=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:0in 0 15.0pt 0">
+                                        <table style=3D"width:100.0%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style=3D"padding:0i=
+n 0in 0in 0in">
+                                                        <p class=3D"MsoNorm=
+al" style=3D"line-height:13.5pt">
+                                                            <span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+                                                                Warm Regard=
+s,<br>
+                                                                <a href=3D"=
+https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMHB=
+1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaAwdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlhI=
+V19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l=
+9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=
+=3D=3D" target=3D"_blank"><b><span style=3D"text-decoration:none">www.Tende=
+rDetail.com</span></b></a><br>
+                                                                Support Tea=
+m | CNET Technologies | <a href=3D"https://delivery.tenderdetail.com/ANFUXE=
+SBC?id=3D146143=3DIk0BB1IABwUGHlMHB1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaA=
+wdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5V=
+UwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFR=
+hUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=3D=3D" target=3D"_blank"><span style=3D"t=
+ext-decoration:none">TenderDetail.com</span></a><br>
+                                                                Ph : (+91) =
+7600307788,(+91) 7600603344
+                                                                <br>
+                                                                E-mail Id :=
+ <a href=3D"mailto:care@tenderdetail.com" target=3D"_blank"><b><span style=
+=3D"color:#0572af;text-decoration:none">care@tenderdetail.com</span></b></a=
+>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align=3D"center" style=3D"padding:7=
+.5pt 15.0pt 7.5pt 15.0pt">
+                                        <span style=3D"font-size:8.5pt;font=
+-family:Arial,Helvetica,sans-serif;color:black">
+                                            To
+                                            Unsubscribe Tender Alerts, <a h=
+ref=3D"mailto:unsubscribe@tenderdetail.com" target=3D"_blank">
+                                                click
+                                                here
+                                            </a><br>
+                                            <strong><span style=3D"font-fam=
+ily:Arial,Helvetica,sans-serif">Disclaimer:</span></strong> The information=
+ in this message is confidential and may be privileged. It
+                                            is intended solely for the addr=
+essee. Access to this
+                                            <br>
+                                            message by anyone else is unaut=
+horized. If you are not the intended
+                                            recipient, any disclosure, copy=
+ing, or distribution of the message,
+                                            <br>
+                                            or any action or omission taken=
+ by you in reliance on it, is prohibited and
+                                            may be unlawful.
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       =20
+    </div>
+<img id=3D"m_-3272978110590490965m_-1100258183627304524SBBBB" src=3D"https:=
+//delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DLk0BB1IABwUGHkEUFxBGEkR=
+FFBYWRRMRGRZBRBgTGUZBEREWRhYWERVCQRQXEEYSRFVIXlcXV1hSdhMLWVdPDxJYXlhIV19NBF=
+VXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5d=
+GJ0JQlfVUkUUg=3D=3D"></div>
+
+
+
+
+
+</div></div>
+</div></div>
+
+--00000000000081a29e064118cc8f--
+--00000000000081a29f064118cc91
+Content-Type: message/rfc822; 
+	name="63 New Tenders Date 12-October-2025 - www.TenderDetail.com.eml"
+Content-Disposition: attachment; 
+	filename="63 New Tenders Date 12-October-2025 - www.TenderDetail.com.eml"
+Content-ID: <f_mgq7cxzm0>
+X-Attachment-Id: f_mgq7cxzm0
+
+Delivered-To: shubham@roadvision.ai
+Received: by 2002:a05:7300:80c3:b0:20a:d29c:a202 with SMTP id b3csp3924413dyd;
+        Mon, 13 Oct 2025 02:09:25 -0700 (PDT)
+X-Received: by 2002:a05:6402:50c7:b0:62f:5424:7371 with SMTP id 4fb4d7f45d1cf-639d5b417e9mr19356621a12.8.1760346564854;
+        Mon, 13 Oct 2025 02:09:24 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1760346564; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ZZZBKxPGBQk86VIgfHtJDFWVoTigz9CLdnbu6VUtdOuNK5JyrXhSPj55uKbO0zHUEZ
+         pLQtaVbCeebWJyG3h5hoSPJSG3207q6Pvr5u3NqmT64o6f4O3a1Hfa3jsQZ0QuBPi2/t
+         Z8dk86cRXKP4yoZzaOxRxmXgxVQE14vj+yn7illpOV1YnEb39yG6JXvj9bO4oxgoHE04
+         XCivCU01tejhwF3cwp0dKjScusutV73mnEC03CbxZX5oYwqGYCVDeBchs03OzvI8Wasx
+         SEE2KxLJ+Qt8hK7CSirljnxYx7BQRBrIRWRIRHOMthvDiUVDKr+1TYqONdGwPwGykYrW
+         NcsQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=aPWrKlTIKrl3wMZYpaEwqAmosGAvAe9PUk15Cwvr6Bo=;
+        fh=oTUCfQ2C5pXkMWe6h5jeGW1m8O/VkW7auy+IkANaFoE=;
+        b=cBO1HnhkyEeA6y5DGRZv5rbrWk/0wHhHf/fOMySWD2fhh9iUFwuXlGqvo9FBYYGFp4
+         EPUBGt6EhOZML1mhUVdxNhPpqiWm6ktIR8AX14dMceY8S2zE5HovO/YCu3KrTHFjkDLr
+         bXjuxuykfiBEMniI4a4zRPqeR5m6yc5zDYLIqTBr6D0Lw8qwZeH9+a2WIRs/9KaRncEP
+         e6gq3KciY9+TuDRTPVCcrc/9qeFQ9eBBFAwQ30spgodui3aCWTfIhbFOqywNZOlw9xzy
+         qN4W2+pCkDJVLiG9vQ+loYwI7S1VKxg2gUuZHdjVP4w3VbEX9AKv2QcGaJ6d8OwtJFyO
+         9w2Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@roadvision.ai header.s=google header.b=WNKTo5qD;
+       spf=pass (google.com: domain of hardik@roadvision.ai designates 209.85.220.41 as permitted sender) smtp.mailfrom=hardik@roadvision.ai;
+       dara=neutral header.i=@roadvision.ai
+Return-Path: <hardik@roadvision.ai>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-63a52b173a1sor1035718a12.1.2025.10.13.02.09.24
+        for <shubham@roadvision.ai>
+        (Google Transport Security);
+        Mon, 13 Oct 2025 02:09:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of hardik@roadvision.ai designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@roadvision.ai header.s=google header.b=WNKTo5qD;
+       spf=pass (google.com: domain of hardik@roadvision.ai designates 209.85.220.41 as permitted sender) smtp.mailfrom=hardik@roadvision.ai;
+       dara=neutral header.i=@roadvision.ai
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=roadvision.ai; s=google; t=1760346564; x=1760951364; darn=roadvision.ai;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=aPWrKlTIKrl3wMZYpaEwqAmosGAvAe9PUk15Cwvr6Bo=;
+        b=WNKTo5qDFkQOdT/8DLPb8efag7Hzg9YZu3qwsH97D78jPvWWkQIfIz1CJGXcH2DPn/
+         o23+wgqAz7K1m/BSWe6i6PcLumtGP6o3SGHYIhv37riRgK+NZrMjFVOO2NrLiSicCaFh
+         /1avdvdkUBK8tuPy45k5/dmFfByRyeU10fQGiYiorwMSa+/eM0XfH1a/tQ1O0iYFmg+v
+         RwIx0G0y652XzhNMTrWPOyvR2WrbalPDdBTaJG2rMp2PTmBCI+05t20vCSg2FyaNYeZO
+         dg1aRfwSmrfMCHBtYRrsiVlnWd8vbuw8plTCTF4NOv7ZQLiN7npnUt1dEvHvc64lkb7y
+         QfBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760346564; x=1760951364;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=aPWrKlTIKrl3wMZYpaEwqAmosGAvAe9PUk15Cwvr6Bo=;
+        b=dbaGCt02R/zNQ4sTI9xPl20Cy5o6KuuX5P++phsSsEqTqZJJuLNTlpcljxqRBI+Wvv
+         xf9Av6vKIIbprUAQeaq//9rwdSY1p72FprX/8yIsH5cLKKmCN3KYbS+3zEkkSizFELAO
+         YoeF0EJPMNZRvHxVvCs2RPlKyW9zk8B1NLc2iINzKEKexf9/kpq3POEsF/VlbKC0G8h0
+         0errOk4eFeX+jeindor2dKXh376PZx0IW0x9/MtQ0MdZlG6OLWWMvP+vz3uJvyiDxsDS
+         9lkWt4nrZC8yu0H2GiiIDkoOSueGkXi+frMLge/9uGrAcW+Lh9pQx4nBeUU6UZ0ArUlP
+         h4Cw==
+X-Gm-Message-State: AOJu0YxW4/hyRkyUBo0MEgokFyTMKbo/as8jmCcZloKmCAMMeec5EIo4
+	PagdSCVHZjDefWu7iE6tQC7fZIiQrX9qbgeVT3blphGpoiExUV0TRidjdlsnZs+/DlFg2cA/n7p
+	nTK1xwfkHG2OsUwjZMOWuCRxthS456ILoObcxpvsf2PskFZBNak0i9sKDnMkN
+X-Gm-Gg: ASbGnctWU6eZeXChkpGvc27yltN0ZrFyhKJFdGtzIpxsuxaXBTKeqCooYxrYF9lSiu9
+	PxaCKdI8mxa68QbqSQ7qFdz3WUq96S5/iB4GM5blC/bIJXAw3GvFPBHhLzpuQOJ8J0LDgRSCVzM
+	QPUtpotK0ktdzh6BNHuBQLQLjiIFYRY/DnAcBGWc0YTay3IgK+z2r1SorEs1VBwVvgEv8F1I1XR
+	3uSrhTIQFjQGnilnxsd4yDsfBW1K7BEMpzOzxM3bK56gBoD9+WqE26Cy3tu
+X-Google-Smtp-Source: AGHT+IFLxZ2K51telfQOOd0NmAQE6kwqIk664VPzNHAgODiDJnycxdpShtgF5y3UuONff8kHFefsqQbTJcxYCL8aBGw=
+X-Received: by 2002:a05:6402:278f:b0:637:f164:2ca4 with SMTP id
+ 4fb4d7f45d1cf-639d5b57293mr10841267a12.1.1760346563487; Mon, 13 Oct 2025
+ 02:09:23 -0700 (PDT)
+MIME-Version: 1.0
+References: <20251011145104.EA81DC000084@smtppr-ak-mum2.pepipost.com>
+In-Reply-To: <20251011145104.EA81DC000084@smtppr-ak-mum2.pepipost.com>
+From: Hardik Dave <hardik@roadvision.ai>
+Date: Mon, 13 Oct 2025 14:39:10 +0530
+X-Gm-Features: AS18NWAtQoSYA33pH22mnZEdhgVsvOVK9Os0MVtUM9B-vsAEGmo1TR2-7J3Qum8
+Message-ID: <CAGZ-gSEk15d6esg0EVR+yEnY0MPjphtgBXOxjdg3r711bSyU_g@mail.gmail.com>
+Subject: Fwd: 63 New Tenders Date 12-October-2025 - www.TenderDetail.com
+To: Shubham Kanojia <shubham@roadvision.ai>
+Content-Type: multipart/alternative; boundary="000000000000993adf0641069fe9"
+
+--000000000000993adf0641069fe9
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Kind regards
+Hardik Dave
+Founder & CEO | RoadVision AI
+Mob: +91 9768725607 ; Email: hardik@roadvision.ai
+Office: B-310, Ansal Chamber-1, Bhikaji Cama Place, Delhi;
+Website: www.roadvision.ai
+[image: twitter] <https://twitter.com/RoadvisionAI> [image: linkedin]
+<https://www.linkedin.com/company/roadvisionai/>
+
+
+---------- Forwarded message ---------
+From: <tenders@tenderdetail.com>
+Date: Sat, 11 Oct 2025 at 20:21
+Subject: 63 New Tenders Date 12-October-2025 - www.TenderDetail.com
+To: <hardik@indikaai.com>
+Cc: <simran@indikaai.com>, <shradha@agrimadvisors.com>, <Sales@roadvision.a=
+i>,
+<Priyansh.negi@predco.ai>, <Kamal.Vashisht@icloud.com>, <
+tanisha@panscience.xyz>, <shradha@indikaai.com>, <govind@roadvision.ai>, <
+hardik@roadvision.ai>, <prateeksha@roadvision.ai>
+
+
+ To prevent mailers from going into the junk folder, Please add
+tenders@tenderdetail.com
+ If you cannot see this message click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQ=
+DglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK>
+to view in your browser
+*TenderDetail*
+* .com Indian Tenders * New Tenders
+12-10-2025
+For Customer Support
+(+91) 76 00 30 77 88
+(+91) 76 00 60 33 44
+
+*Dear Mr. Hardik Dave* ,
+INDIKA AI PRIVATE LIMITED * 63 New Tenders Related to Your Business *
+*Query * *No of Tenders Found * *View *
+AI/Block Chain 5 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYA=
+AQJeBVZWUAZQVgUADwQFAglRWFYHAwFQUgNVAgYBVVIGAV5TBQNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+h/TiZUXFoNQXJZVw9Y>*
+Data Annotation 0
+DIGITALIZATION WORK 23 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgBV=
+U1NRAgIDVlcDUAUGW1BZVQBSWlNRAFUCUg4BB1daVFAHCQdTVlBIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+1/Ji1scnUvO3Blfyl4FmZ6MCo=3D>*
+ITMS 0
+Digital Twin 0
+GIS GPR Survey 11 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMF=
+UgQDU11SVgUHVlBVC1BXVgtXWFAAUFJXVlQGBVFXAAQBU1RXBwFIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+5/MkR/Y2tGMkRDQANP>*
+Road/Bridge Audit 0
+Network Survey Veh. 0
+Pavement audit 0
+road safety Tenders 7 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUE=
+AwNUB1xXUQICXVAAAAADVgsGWl9YAANTVlIDCAQHBVFSAwdQUANIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEk=
+tZAAAYQFgABEVIFjJTWFVQEBI=3D>*
+AI Related 5 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlIA=
+AFUFBlZSVVcBXAdXCwdUVggEWAQFAVdUVgNQBVNXWFAGCFMGUARIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+h/QTZdX1gSBFU=3D>*
+Litigation Managemen 0
+Data Analytic 6 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlFS=
+AVVeVl1RBlMDBlUBC1VVUQEADl5SU1AFUg8PUgFaVwxRAwIAXV1IXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+1XFQUYclcHDUhFXwU=3D>*
+Natural Language Pro 0
+Infrastructure 1 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgRR=
+BgkDB1VRAwYGAVFVCQRSBQ0CXVUAB1cAXgcOU1BXB1YEAgMBB1VIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn=
+BYBxZZQE0UFFJFQxRT>*
+Smart City 0
+Traffic management 5 *Click here
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlNX=
+UlQDVwJVAQ9UB1YAXwFYBg8ECQRTAQUBUldTCFBUVgBUBlBRVAZIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEm=
+1EAAJeWlpGDFBfVwFTW1RbFg=3D=3D>*
+HIMS 0
+Clinical Decision Su 0
+Automated Auditing S 0
+Defence and Security 0
+Education and workfo 0
+Click Here To View All 63 New Tenders 12-10-2025
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQ=
+DglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK>
+*AI/Block Chain (5) *
+1. Railtel Corporation Of India Limited Visakhapatnam - Andhra Pradesh
+
+*TDR : 51655667* * Corrigendum :*Supply Installation And Commissioning For
+Smart Video Surveillance, *Artificial* *Intelligence* (*Ai*)/*Machine*
+*Learning* (Ml) *Based* Video Analytics (Va)
+
+*Tender Value:* 30.40 Crore
+*Due Date:* 01-Nov-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMC=
+VlQEAFFVVw4PUQsECAICAAtWXwAEAAdXUwQPVQIDUgABAFAKBQZIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSDQYPUFYedAMjBAIDcCBMDAIBVB9QJ3V3G1wAcw=
+4bJ1YBBQBUI3cIclYGGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+2. Tripura Jal Board Agartala - Tripura
+
+*TDR : 51705827* providing and installation of pipeline inspection crawler
+robot, a non-motorised inspection camera for pipe line inspection and *ai*
+*based* assessment technology
+
+*Tender Value:* 2.62 Crore
+*Due Date:* 27-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgcC=
+UwEHV10HUA8EBgcGCwBWXVsDAFUCBQAOU1JVVA1aUlYOBQICVF1IXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BTCAYBVFYeBHNTBQZ3DSZMB3YHUB9QJAYFG113Bg=
+4bUSEIdntUU3MFAlN0GQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+3. All India Institute Of Medical Sciences Mangalagiri - Andhra Pradesh
+
+*TDR : 51690490* supply of battery-operated x-ray *machine* with
+*artificial* *intelligence* *software* turnkey project for the department
+of radio diagnosis. , battery-operated x-ray *machine* with *artificial*
+*intelligence*
+
+*Tender Value:* 2.40 Crore
+*Due Date:* 10-Nov-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYH=
+AgMEBVUBBAADUgQAWwFSBVpSDlcDUwFXUA4CB1MGAFECA1cLVFxIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSAQMNX1EedAFSDnQAAFdMBXVyIx9QUnYDGycKBw=
+sbUFR7dQxWJHMJAyJyGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+4. Madhya Pradesh Madhya Kshetra Vidyut Vitaran Company Limited Madhya
+Pradesh
+
+*TDR : 51689806* , 1 kv 35 a single phase bridge rectifier diode electronic
+components spanner set tapariya ring type spanner set fix type nylon rope,
+nylon rope size 22 mm chain *block*, *chain* block 1.5 ton 10 meter
+
+*Tender Value:* Ref.Document
+*Due Date:* 14-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlAG=
+BQkAUVcEAVNQAQoDC1IEV14LWF5RBAcCVFQEBQUGUlAOBgMGUlJIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSAAoBVlceAw4kdXRwdiBMAgAGVx9QUgByG1wGAX=
+gbWSYKBgtWUXJ1AF5yGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+5. Indian Navy Kachchh - Gujarat
+
+*TDR : 51565425* * Corrigendum :*Bids Are Invited For Procurement Of *Ai*
+*Based* Intrusion Detection *Systems* And Services , Taut Wire Intrusion
+Detection *System* (Mha) Total Quantity : 1
+
+*Tender Value:* Ref.Document
+*Due Date:* 18-Oct-2025
+Tender Document * Gem Tender *
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYA=
+AlIFBwddUVJVAARUCwRZXQ4EDVJVBFBVXgICVwIDVQFTAF4HU1ZIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BRDgYNVFQeBA8lcnRwdiZMBXEFVh9QUQEAG1xyAg=
+4bUFR7dgAgInJ0A1J1GQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+*DIGITALIZATION WORK (5) *
+1. South Western Railway Hubbali - Karnataka
+
+*TDR : 51700747* tender for design, customization, implementation,
+operations & maintenance support of integrated project *management* and
+*information* *system* (pmis) for various projects under south western
+railway
+
+*Tender Value:* 6.66 Crore
+*Due Date:* 25-Nov-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlVR=
+BghUU1JVBwVVXAEACVMFXF4EX18HCFQCAA8OUlMBUAIBUl9WVARIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BTCAMOUlYedABecAQDAFJMAnICJx9QJg13GyQHAH=
+gbI1Z8cnxWJwEAd1EBGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+2. Gujarat State Electricity Corporation Limited Kheda - Gujarat
+
+*TDR : 51689229* tender for the job work of *scanning*/ inspection work of
+economizer and ltsh coils by rfet technique/eci technique in all 210 mw
+units at wtps - gsecl during aoh/coh and as and when required basis .
+
+*Tender Value:* 48 Lakhs
+*Due Date:* 28-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUA=
+UwlSAVJWBAdQXAMIWw4CVVxWXVUCVFVSUQBQVFdQAgECVlYKUQNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BSAAoLVFgedQRRD3d3d1VMBAUJXh9QXQ0OGycLBn=
+gbVVwICw9eVQUDdV90GQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+3. Department Of Local Bodies Jaipur - Rajasthan
+
+*TDR : 51558028* * Corrigendum :*Tender For *Digitalization* Of Garage And
+Integrated *Management* *System*.
+
+*Tender Value:* 35 Lakhs
+*Due Date:* 27-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlkF=
+AwcHAABRDQJXAFVXAVADXAgEW19SBwIOA1QHU1ADUFEGBgNWXVJIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BRDQsJVFkec3Bfdw90AVRMdgF0Jx9QVAMEGydwCQ=
+kbUCALAgEjUAkHdyMCGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+4. Jaipur Municipal Corporation Jaipur - Rajasthan
+
+*TDR : 51550871* * Corrigendum :*tender for *Digitalization* Of Garage And
+Integrated *Management* *System*. Nit No. 23 Dc Garrage Greater
+
+*Tender Value:* 35 Lakhs
+*Due Date:* 13-Oct-2025
+Tender Document
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlgA=
+VQAHUVAAAlIOVgoGAAECBloCC1ZSUgEGU1MPUlMEAgRUBldWAlNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BRDQMBUVAeBXRQAQEGdlJMDAABXh9QUXB0GycCBg=
+4bVSAPBg5VJAcFDyUPGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+5. Medical Education Department Lucknow - Uttar Pradesh
+
+*TDR : 51428043* * Corrigendum :*Bids Are Invited For *Scanning* Laser
+Therapy (Q3) Total Quantity : 1
+
+*Tender Value:* 24 Lakhs
+*Due Date:* 22-Oct-2025
+Tender Document * Gem Tender *
+View Tender
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlcB=
+UwAAVgUAVw9UXAVQWldZVwlQWlQFBFIBXgQDAAxSUVIHBlcGBVNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwI=
+IUF8bMlNYVVAQEhtjVQhWARd6WUIMUFQWA1BQCgsJUlIeAgVfBHQDd1VMdgUEIh9QJHAAG10DCA=
+sbWCZ5An1TVHQHBFUCGQABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLV=
+VZQUw9QUlNbAVg=3D>
+*Note: * *Click here*
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQ=
+DglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8=
+NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK>
+*
+To View 63 New Tenders Available as per Your Preference. *
+
+For further assistance or query please feel free to write to us on
+*care@tenderdetail.com* <care@tenderdetail.com> or call us on phone numbers
+given below.
+Your valued suggestions and feedback will help us to serve you better.
+We assure our best services.
+
+Warm Regards,
+*www.TenderDetail.com*
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMH=
+B1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaAwdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=3D=
+=3D>
+Support Team | CNET Technologies | TenderDetail.com
+<https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMH=
+B1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaAwdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlh=
+IV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3=
+l9fzM5dGJ0JQlfVUkUUg=3D=3D&fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=3D=
+=3D>
+Ph : (+91) 7600307788,(+91) 7600603344
+E-mail Id : *care@tenderdetail.com* <care@tenderdetail.com>
+To Unsubscribe Tender Alerts, click here <unsubscribe@tenderdetail.com>
+*Disclaimer:* The information in this message is confidential and may be
+privileged. It is intended solely for the addressee. Access to this
+message by anyone else is unauthorized. If you are not the intended
+recipient, any disclosure, copying, or distribution of the message,
+or any action or omission taken by you in reliance on it, is prohibited and
+may be unlawful.
+
+--000000000000993adf0641069fe9
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><br clear=3D"all"></div><div><div dir=3D"ltr" class=
+=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><t=
+able cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"color:rgb(0,=
+0,0);font-size:inherit;border-collapse:collapse!important"><tbody><tr><td><=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"font-size:i=
+nherit;border-collapse:collapse!important"><tbody><tr><td style=3D"font-fam=
+ily:Helvetica,sans-serif;padding-bottom:6px;font-size:13px"><font face=3D"t=
+rebuchet ms, sans-serif">Kind regards</font></td></tr><tr><td style=3D"font=
+-family:Helvetica,sans-serif;font-weight:700;color:rgb(6,18,225);font-size:=
+14px"><font face=3D"trebuchet ms, sans-serif">Hardik Dave</font></td></tr><=
+tr><td style=3D"padding:6px 0px;border-bottom:1px solid rgb(51,51,51)"><tab=
+le cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"font-size:inhe=
+rit;border-collapse:collapse!important"><tbody><tr><td style=3D"font-family=
+:Helvetica,sans-serif;font-size:13px"><font face=3D"trebuchet ms, sans-seri=
+f">Founder &amp; CEO |</font></td><td style=3D"font-family:Helvetica,sans-s=
+erif;padding-left:8px;font-size:13px"><font face=3D"trebuchet ms, sans-seri=
+f">RoadVision AI</font></td></tr></tbody></table></td></tr><tr><td style=3D=
+"padding-top:6px"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" s=
+tyle=3D"font-size:inherit;border-collapse:collapse!important"><tbody><tr><t=
+d style=3D"font-family:Helvetica,sans-serif;font-size:13px"><font face=3D"t=
+rebuchet ms, sans-serif">Mob: +91 9768725607 ; Email:</font></td><td style=
+=3D"padding-left:10px"><a href=3D"mailto:hardik@roadvision.ai" style=3D"fon=
+t-weight:inherit!important;color:rgb(0,0,0)!important;font-size:13px!import=
+ant;line-height:inherit!important" target=3D"_blank"><font face=3D"trebuche=
+t ms, sans-serif">hardik@roadvision.ai</font></a></td></tr></tbody></table>=
+</td></tr><tr><td style=3D"padding-top:6px"><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" style=3D"font-size:inherit;border-collapse:collaps=
+e!important"><tbody><tr><td style=3D"font-family:Helvetica,sans-serif;font-=
+size:13px"><font face=3D"trebuchet ms, sans-serif">Office: B-310, Ansal Cha=
+mber-1, Bhikaji Cama Place, Delhi; <br>Website: <a href=3D"http://www.roadv=
+ision.ai" target=3D"_blank">www.roadvision.ai</a>=C2=A0</font></td><td styl=
+e=3D"padding-left:11px"></td></tr></tbody></table></td></tr><tr><td style=
+=3D"padding-top:12px"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" style=3D"font-size:inherit;border-collapse:collapse!important"><tbody><t=
+r><td style=3D"font-size:0px;line-height:0px;padding-right:10px"><a href=3D=
+"https://twitter.com/RoadvisionAI" style=3D"font-weight:inherit!important;f=
+ont-size:inherit!important;line-height:inherit!important" target=3D"_blank"=
+><font face=3D"trebuchet ms, sans-serif"><img src=3D"https://woodpecker.co/=
+cdn-cgi/imagedelivery/dbHg18raJkJAbxhrT08asw/6a534444-5886-45fb-5406-6a08f3=
+1af200/public" alt=3D"twitter" width=3D"20" height=3D"20" style=3D"height:2=
+0px;max-width:100%;border:0px;line-height:0px;outline:none;width:20px"></fo=
+nt></a></td><td style=3D"font-size:0px;line-height:0px;padding-right:10px">=
+<a href=3D"https://www.linkedin.com/company/roadvisionai/" style=3D"font-we=
+ight:inherit!important;font-size:inherit!important;line-height:inherit!impo=
+rtant" target=3D"_blank"><font face=3D"trebuchet ms, sans-serif"><img src=
+=3D"https://woodpecker.co/cdn-cgi/imagedelivery/dbHg18raJkJAbxhrT08asw/59f9=
+bf1c-000e-471b-3e4d-58386cf6c000/public" alt=3D"linkedin" width=3D"20" heig=
+ht=3D"20" style=3D"height:20px;max-width:100%;border:0px;line-height:0px;ou=
+tline:none;width:20px"></font></a></td></tr></tbody></table></td></tr></tbo=
+dy></table></td></tr></tbody></table></div></div></div><br><br><div class=
+=3D"gmail_quote gmail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr=
+">---------- Forwarded message ---------<br>From: <span dir=3D"auto">&lt;<a=
+ href=3D"mailto:tenders@tenderdetail.com">tenders@tenderdetail.com</a>&gt;<=
+/span><br>Date: Sat, 11 Oct 2025 at 20:21<br>Subject: 63 New Tenders Date 1=
+2-October-2025 - <a href=3D"http://www.TenderDetail.com">www.TenderDetail.c=
+om</a><br>To:  &lt;<a href=3D"mailto:hardik@indikaai.com">hardik@indikaai.c=
+om</a>&gt;<br>Cc:  &lt;<a href=3D"mailto:simran@indikaai.com">simran@indika=
+ai.com</a>&gt;,  &lt;<a href=3D"mailto:shradha@agrimadvisors.com">shradha@a=
+grimadvisors.com</a>&gt;,  &lt;<a href=3D"mailto:Sales@roadvision.ai">Sales=
+@roadvision.ai</a>&gt;,  &lt;<a href=3D"mailto:Priyansh.negi@predco.ai">Pri=
+yansh.negi@predco.ai</a>&gt;,  &lt;<a href=3D"mailto:Kamal.Vashisht@icloud.=
+com">Kamal.Vashisht@icloud.com</a>&gt;,  &lt;<a href=3D"mailto:tanisha@pans=
+cience.xyz">tanisha@panscience.xyz</a>&gt;,  &lt;<a href=3D"mailto:shradha@=
+indikaai.com">shradha@indikaai.com</a>&gt;,  &lt;<a href=3D"mailto:govind@r=
+oadvision.ai">govind@roadvision.ai</a>&gt;,  &lt;<a href=3D"mailto:hardik@r=
+oadvision.ai">hardik@roadvision.ai</a>&gt;,  &lt;<a href=3D"mailto:prateeks=
+ha@roadvision.ai">prateeksha@roadvision.ai</a>&gt;<br></div><br><br><u></u>
+
+
+   =20
+   =20
+
+
+
+<div>
+    <div>
+        <table style=3D"width:100%;background:white none repeat scroll 0% 0=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <table style=3D"width:100.0%;background:white" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                            <tbody>
+                                <tr>
+                                    <td style=3D"padding:0px 0px" align=3D"=
+right">
+                                        <span style=3D"font-size:7.5pt;font=
+-family:Arial,Helvetica,sans-serif;color:black">
+                                            =C2=A0To
+                                            prevent mailers from going into=
+ the junk folder, Please add <a href=3D"mailto:tenders@tenderdetail.com" ta=
+rget=3D"_blank">tenders@tenderdetail.com</a>
+                                        </span><span style=3D"font-size:8.5=
+pt;font-family:Arial,Helvetica,sans-serif;color:#999999">
+                                            <br>
+                                        </span><span style=3D"font-size:7.5=
+pt;font-family:Arial,Helvetica,sans-serif;color:black">=C2=A0If you cannot =
+see this message <a href=3D"https://delivery.tenderdetail.com/ANFUXESBC?id=
+=3D146143=3DIk0BB1IABwUGHldQDglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bUwYABVV=
+UUFNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQF=
+RHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5=
+CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVU=
+wFCANQGw8FBVZMDQYDAlddUFVUVFIK" target=3D"_blank">click here</a> to view in=
+ your browser</span><span style=3D"font-size:8.5pt;font-family:Arial,Helvet=
+ica,sans-serif;color:#999999"> </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:15px 0">
+                                        <table style=3D"width:100.0%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <strong><i><span st=
+yle=3D"font-size:17.0pt;font-family:&#39;Arial Bold&#39;,Gadget,sans-serif"=
+>TenderDetail</span></i></strong><i>
+                                                            <span style=3D"=
+font-size:13.5pt;font-family:&#39;Arial Black&#39;,Gadget,sans-serif;color:=
+#dc872b">.com</span><span style=3D"font-family:&#39;Arial Black&#39;,Gadget=
+,sans-serif">
+                                                                <br>
+                                                            </span><span st=
+yle=3D"font-size:13.5pt;color:#0572af">Indian Tenders</span>
+                                                        </i>
+                                                    </td>
+                                                    <td align=3D"right">
+                                                        <span style=3D"font=
+-size:13.5pt;font-family:Arial,Helvetica,sans-serif;color:#0572af">
+                                                            New
+                                                            Tenders
+                                                        </span><span style=
+=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+                                                            <br>
+                                                            <span style=3D"=
+color:#0572af">12-10-2025</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:0px 0px" align=3D"=
+right">
+                                        <span style=3D"font-size:13.5pt;fon=
+t-family:Arial,Helvetica,sans-serif;color:#0572af">For Customer Support</sp=
+an><br>
+                                        <span style=3D"font-size:13.5pt;fon=
+t-family:Arial,Helvetica,sans-serif;color:#0572af">(+91) 76 00 30 77 88</sp=
+an><br>
+                                        <span style=3D"font-size:13.5pt;fon=
+t-family:Arial,Helvetica,sans-serif;color:#0572af">(+91) 76 00 60 33 44</sp=
+an><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        =C2=A0
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table style=3D"width:100.0%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <b><span style=3D"f=
+ont-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af">Dear M=
+r. Hardik Dave</span></b><span style=3D"font-size:9.0pt;font-family:Arial,H=
+elvetica,sans-serif;color:#0572af">
+                                                            ,<br>
+                                                            INDIKA AI PRIVA=
+TE LIMITED
+                                                        </span>
+                                                    </td>
+                                                    <td style=3D"padding:0i=
+n 0in 0in 0in" align=3D"right">
+                                                        <b>
+                                                            <span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af">
+                                                                63
+                                                                New Tenders=
+ Related to Your Business
+                                                            </span>
+                                                        </b>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;p=
+adding:0in 0in 0in 0in;height:7.5pt" width=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table style=3D"background:rgb(204,=
+204,204) none repeat scroll 0% 0%;font-family:Arial,Helvetica,sans-serif;wi=
+dth:100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"1">
+                                            <tbody>
+                                                <tr>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:left;width:100px"><b style=3D"font-size:9.=
+0pt;font-family:Arial,Helvetica,sans-serif;color:white">Query </b></td>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center;width:70px"><b style=3D"font-size:9=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:white">No of Tenders Foun=
+d </b></td>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center;width:70px"><b style=3D"font-size:9=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:white">View </b></td>
+                                                </tr>
+                                                <tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">AI/Block Chain</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">5</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYAAQJeBVZW=
+UAZQVgUADwQFAglRWFYHAwFQUgNVAgYBVVIGAV5TBQNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEnh/Ti=
+ZUXFoNQXJZVw9Y" style=3D"color:#0572af" target=3D"_blank">Click here</a></s=
+trong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Data Annotation</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">DIGITALIZATION WORK</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">23</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgBVU1NRAgID=
+VlcDUAUGW1BZVQBSWlNRAFUCUg4BB1daVFAHCQdTVlBIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn1/Ji=
+1scnUvO3Blfyl4FmZ6MCo=3D" style=3D"color:#0572af" target=3D"_blank">Click h=
+ere</a></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">ITMS</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Digital Twin</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">GIS GPR Survey</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">11</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMFUgQDU11S=
+VgUHVlBVC1BXVgtXWFAAUFJXVlQGBVFXAAQBU1RXBwFIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn5/Mk=
+R/Y2tGMkRDQANP" style=3D"color:#0572af" target=3D"_blank">Click here</a></s=
+trong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Road/Bridge Audit</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Network Survey Veh.</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Pavement audit</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">road safety Tenders</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">7</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUEAwNUB1xX=
+UQICXVAAAAADVgsGWl9YAANTVlIDCAQHBVFSAwdQUANIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEktZAA=
+AYQFgABEVIFjJTWFVQEBI=3D" style=3D"color:#0572af" target=3D"_blank">Click h=
+ere</a></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">AI Related</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">5</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlIAAFUFBlZS=
+VVcBXAdXCwdUVggEWAQFAVdUVgNQBVNXWFAGCFMGUARIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEnh/QT=
+ZdX1gSBFU=3D" style=3D"color:#0572af" target=3D"_blank">Click here</a></str=
+ong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Litigation Managemen</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Data Analytic</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">6</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlFSAVVeVl1R=
+BlMDBlUBC1VVUQEADl5SU1AFUg8PUgFaVwxRAwIAXV1IXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEn1XFQ=
+UYclcHDUhFXwU=3D" style=3D"color:#0572af" target=3D"_blank">Click here</a><=
+/strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Natural Language Pro</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Infrastructure</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">1</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgRRBgkDB1VR=
+AwYGAVFVCQRSBQ0CXVUAB1cAXgcOU1BXB1YEAgMBB1VIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEnBYBx=
+ZZQE0UFFJFQxRT" style=3D"color:#0572af" target=3D"_blank">Click here</a></s=
+trong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Smart City</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Traffic management</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">5</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong><a href=3D"https:/=
+/delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlNXUlQDVwJV=
+AQ9UB1YAXwFYBg8ECQRTAQUBUldTCFBUVgBUBlBRVAZIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFV=
+XBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dG=
+J0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEV=
+TCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIKEm1EAA=
+JeWlpGDFBfVwFTW1RbFg=3D=3D" style=3D"color:#0572af" target=3D"_blank">Click=
+ here</a></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">HIMS</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Clinical Decision Su</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Automated Auditing S</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Defence and Security</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+<tr>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:left" =
+valign=3D"top">Education and workfo</td>
+    <td style=3D"background:white;padding:2px;height:10px;text-align:center=
+" valign=3D"top">0</td>
+                                    <td style=3D"background:white;padding:2=
+px;height:10px;text-align:center" valign=3D"top"><strong></strong></td>
+                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;b=
+order-top:solid #cedbdc 1.0pt;padding:0in 0in 0in 0in;height:7.5pt" width=
+=3D"100%"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style=3D"width:100%;background:white none repeat scroll 0% 0=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+            <tbody>
+                <tr>
+                    <td style=3D"background:#dc872b;width:100%;font-size:16=
+px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;padding:10px;col=
+or:white;text-align:center">
+
+                        <a href=3D"https://delivery.tenderdetail.com/ANFUXE=
+SBC?id=3D146143=3DIk0BB1IABwUGHldQDglWUFEHVVdUBgIHCVRYXF0FXAcFCQEFVQYPVQ1bU=
+wYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5V=
+UwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFR=
+hUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEVTCFJTQ0ZNVQMGA1ADV1MbAVVSBQQIVFRJ=
+AQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK" style=3D"color:white" target=3D"_blan=
+k">
+                            <span>
+                                Click Here To View All 63 New Tenders 12-10=
+-2025
+                            </span>
+                        </a>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style=3D"width:100%;background:white none repeat scroll 0% 0=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <table style=3D"width:100.0%;background:white" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                            <tbody>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;p=
+adding:0in 0in 0in 0in;height:7.5pt" width=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table style=3D"background:#cccccc;=
+max-width:100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"1" width=3D"1=
+00%">
+                                            <tbody>
+
+                                                  <tr>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center"><b style=3D"font-size:9.0pt;font-f=
+amily:Arial,Helvetica,sans-serif;color:white">AI/Block Chain (5) </b></td>
+                                                </tr> <tr style=3D"backgrou=
+nd:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">1. Railtel Corp=
+oration Of India Limited </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Visakhapatnam -  Andhra Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51655667</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Supply Installation And Commis=
+sioning For Smart Video Surveillance, <b style=3D"color:red">Artificial</b>=
+ <b style=3D"color:red">Intelligence</b> (<b style=3D"color:red">Ai</b>)/<b=
+ style=3D"color:red">Machine</b> <b style=3D"color:red">Learning</b> (Ml) <=
+b style=3D"color:red">Based</b> Video Analytics (Va)
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 30.4=
+0 Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 01-Nov-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMCVlQEAFFVVw4PUQsECAICAAtWX=
+wAEAAdXUwQPVQIDUgABAFAKBQZIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSDQYPUFYedAMjBAIDcCBMDAIBVB9QJ3V3G1wAcw4bJ1YBBQBUI3cIclYGG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">2. Tripura Jal =
+Board </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Agartala -  Tripura</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51705827</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> provid=
+ing and installation of pipeline inspection crawler robot, a non-motorised =
+inspection camera for pipe line inspection and <b style=3D"color:red">ai</b=
+> <b style=3D"color:red">based</b> assessment technology
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 2.62=
+ Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 27-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgcCUwEHV10HUA8EBgcGCwBWXVsDA=
+FUCBQAOU1JVVA1aUlYOBQICVF1IXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BTCAYBVFYeBHNTBQZ3DSZMB3YHUB9QJAYFG113Bg4bUSEIdntUU3MFAlN0G=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">3. All India In=
+stitute Of Medical Sciences </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Mangalagiri -  Andhra Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51690490</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> supply=
+ of battery-operated x-ray <b style=3D"color:red">machine</b> with <b style=
+=3D"color:red">artificial</b> <b style=3D"color:red">intelligence</b> <b st=
+yle=3D"color:red">software</b> turnkey project for the department of radio =
+diagnosis. , battery-operated x-ray <b style=3D"color:red">machine</b> with=
+ <b style=3D"color:red">artificial</b> <b style=3D"color:red">intelligence<=
+/b>
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 2.40=
+ Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 10-Nov-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYHAgMEBVUBBAADUgQAWwFSBVpSD=
+lcDUwFXUA4CB1MGAFECA1cLVFxIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSAQMNX1EedAFSDnQAAFdMBXVyIx9QUnYDGycKBwsbUFR7dQxWJHMJAyJyG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">4. Madhya Prade=
+sh Madhya Kshetra Vidyut Vitaran Company Limited </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+> Madhya Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51689806</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> , 1 kv=
+ 35 a single phase bridge rectifier diode electronic components spanner set=
+ tapariya ring type spanner set fix type nylon rope, nylon rope size 22 mm =
+chain <b style=3D"color:red">block</b>, <b style=3D"color:red">chain</b> bl=
+ock 1.5 ton 10 meter
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> Ref.=
+Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 14-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlAGBQkAUVcEAVNQAQoDC1IEV14LW=
+F5RBAcCVFQEBQUGUlAOBgMGUlJIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSAAoBVlceAw4kdXRwdiBMAgAGVx9QUgByG1wGAXgbWSYKBgtWUXJ1AF5yG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">5. Indian Navy =
+</span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Kachchh -  Gujarat</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51565425</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Bids Are Invited For Procureme=
+nt Of <b style=3D"color:red">Ai</b> <b style=3D"color:red">Based</b> Intrus=
+ion Detection <b style=3D"color:red">Systems</b> And Services , Taut Wire I=
+ntrusion Detection <b style=3D"color:red">System</b> (Mha) Total Quantity :=
+ 1
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> Ref.=
+Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 18-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document <b> Gem Tender </b>=
+</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlYAAlIFBwddUVJVAARUCwRZXQ4ED=
+VJVBFBVXgICVwIDVQFTAF4HU1ZIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BRDgYNVFQeBA8lcnRwdiZMBXEFVh9QUQEAG1xyAg4bUFR7dgAgInJ0A1J1G=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+  <tr>
+                                                    <td style=3D"background=
+:#0572af;padding:10px;text-align:center"><b style=3D"font-size:9.0pt;font-f=
+amily:Arial,Helvetica,sans-serif;color:white">DIGITALIZATION WORK (5) </b><=
+/td>
+                                                </tr> <tr style=3D"backgrou=
+nd:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">1. South Wester=
+n Railway </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Hubbali -  Karnataka</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51700747</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> tender=
+ for design, customization, implementation, operations &amp; maintenance su=
+pport of integrated project <b style=3D"color:red">management</b> and <b st=
+yle=3D"color:red">information</b> <b style=3D"color:red">system</b> (pmis) =
+for various projects under south western railway=20
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 6.66=
+ Crore</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 25-Nov-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlVRBghUU1JVBwVVXAEACVMFXF4EX=
+18HCFQCAA8OUlMBUAIBUl9WVARIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BTCAMOUlYedABecAQDAFJMAnICJx9QJg13GyQHAHgbI1Z8cnxWJwEAd1EBG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">2. Gujarat Stat=
+e Electricity Corporation Limited </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Kheda -  Gujarat</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51689229</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> tender=
+ for the job work of <b style=3D"color:red">scanning</b>/ inspection work o=
+f economizer and ltsh coils by rfet technique/eci technique in all 210 mw u=
+nits at wtps - gsecl during aoh/coh and as and when required basis .
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 48 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 28-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHgUAUwlSAVJWBAdQXAMIWw4CVVxWX=
+VUCVFVSUQBQVFdQAgECVlYKUQNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BSAAoLVFgedQRRD3d3d1VMBAUJXh9QXQ0OGycLBngbVVwICw9eVQUDdV90G=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">3. Department O=
+f Local Bodies </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Jaipur -  Rajasthan</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51558028</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Tender For <b style=3D"color:r=
+ed">Digitalization</b> Of Garage And Integrated <b style=3D"color:red">Mana=
+gement</b> <b style=3D"color:red">System</b>.
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 35 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 27-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlkFAwcHAABRDQJXAFVXAVADXAgEW=
+19SBwIOA1QHU1ADUFEGBgNWXVJIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BRDQsJVFkec3Bfdw90AVRMdgF0Jx9QVAMEGydwCQkbUCALAgEjUAkHdyMCG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#fff">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">4. Jaipur Munic=
+ipal Corporation </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Jaipur -  Rajasthan</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51550871</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>tender for <b style=3D"color:r=
+ed">Digitalization</b> Of Garage And Integrated <b style=3D"color:red">Mana=
+gement</b> <b style=3D"color:red">System</b>. Nit No. 23 Dc Garrage Greater
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 35 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 13-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlgAVQAHUVAAAlIOVgoGAAECBloCC=
+1ZSUgEGU1MPUlMEAgRUBldWAlNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BRDQMBUVAeBXRQAQEGdlJMDAABXh9QUXB0GycCBg4bVSAPBg5VJAcFDyUPG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+<tr style=3D"background:#edf2f7">
+    <td style=3D"padding:10px" valign=3D"top">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+            <tbody><tr>
+                 <td>
+
+                    <table width=3D"100%">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:12.0pt;font-family=
+:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold">5. Medical Educ=
+ation Department </span></td>
+                            <td align=3D"right"><span style=3D"font-size:12=
+.0pt;font-family:Arial,Helvetica,sans-serif;color:#0572af;font-weight:bold"=
+>Lucknow -  Uttar Pradesh</span></td>
+                        </tr>
+                    </tbody></table>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class=3D"MsoNormal">
+                        <b><span style=3D"font-size:9.0pt;font-family:Arial=
+,Helvetica,sans-serif;color:black">TDR : 51428043</span></b><span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif;color:black"> <font =
+color=3D"cc0000"><b> Corrigendum :</b></font>Bids Are Invited For <b style=
+=3D"color:red">Scanning</b> Laser Therapy (Q3) Total Quantity : 1
+                            <br>
+                        </span>
+                        <span style=3D"font-size:9.0pt;font-family:Arial,He=
+lvetica,sans-serif;color:black"></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    =C2=A0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0">
+                        <tbody><tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Tender Value:</strong> 24 L=
+akhs</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><strong>Due Date:</strong> 22-Oct-2=
+025</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black">Tender Document <b> Gem Tender </b>=
+</span></td>
+                        </tr>
+                        <tr>
+                            <td><span style=3D"font-size:9.0pt;font-family:=
+Arial,Helvetica,sans-serif;color:black"><a href=3D"https://delivery.tenderd=
+etail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlcBUwAAVgUAVw9UXAVQWldZVwlQW=
+lQFBFIBXgQDAAxSUVIHBlcGBVNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwG=
+BApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=
+=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRd6VwIIUF8bMlNYVVAQEhtjVQ=
+hWARd6WUIMUFQWA1BQCgsJUlIeAgVfBHQDd1VMdgUEIh9QJHAAG10DCAsbWCZ5An1TVHQHBFUCG=
+QABVVAEAB9SBVVWAgcFUxwGWgFXUQlRDEtYCVcFSwIPBANPWAAHBEsLVVZQUw9QUlNbAVg=3D" =
+target=3D"_blank"><span style=3D"color:#0572af;text-decoration:underline">V=
+iew Tender</span></a></span></td>
+                        </tr>
+
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;b=
+order-top:solid #cedbdc 1.0pt;padding:0in 0in 0in 0in;height:7.5pt" width=
+=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:0in 0 7.5pt 0" val=
+ign=3D"top">
+                                        <strong><span style=3D"font-size:9.=
+0pt;font-family:Arial,Helvetica,sans-serif">Note: </span></strong><span sty=
+le=3D"font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+                                            <a href=3D"https://delivery.ten=
+derdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHldQDglWUFEHVVdUBgIHCVRYX=
+F0FXAcFCQEFVQYPVQ1bUwYABVVUUFNIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIO=
+BlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=
+=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCRdXWA8NSEVTCFJTQ0ZNVQM=
+GA1ADV1MbAVVSBQQIVFRJAQtfVUwFCANQGw8FBVZMDQYDAlddUFVUVFIK" target=3D"_blank=
+"><b><span style=3D"color:#0572af;text-decoration:none">Click here</span></=
+b></a> <strong>
+                                                <span style=3D"font-family:=
+Arial,Helvetica,sans-serif">
+                                                    To View 63 New Tenders =
+Available
+                                                    as per Your Preference.
+                                                </span>
+                                            </strong>
+                                            <br>
+                                            <br>
+                                            For further assistance or query=
+ please feel free to write to us on <a href=3D"mailto:care@tenderdetail.com=
+" target=3D"_blank"><b><span style=3D"color:#0572af;text-decoration:none">c=
+are@tenderdetail.com</span></b></a> or call us on
+                                            phone numbers given below.<br>
+                                            Your valued suggestions and fee=
+dback will help us to serve you better.<br>
+                                            We assure our best services.
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style=3D"height:7.5pt">
+                                    <td style=3D"width:100.0%;border:none;b=
+order-top:solid #cedbdc 1.0pt;padding:0in 0in 0in 0in;height:7.5pt" width=
+=3D"100%"></td>
+                                </tr>
+                                <tr>
+                                    <td style=3D"padding:0in 0 15.0pt 0">
+                                        <table style=3D"width:100.0%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style=3D"padding:0i=
+n 0in 0in 0in">
+                                                        <p class=3D"MsoNorm=
+al" style=3D"line-height:13.5pt">
+                                                            <span style=3D"=
+font-size:9.0pt;font-family:Arial,Helvetica,sans-serif">
+                                                                Warm Regard=
+s,<br>
+                                                                <a href=3D"=
+https://delivery.tenderdetail.com/ANFUXESBC?id=3D146143=3DIk0BB1IABwUGHlMHB=
+1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaAwdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlhI=
+V19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l=
+9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFRhUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=
+=3D=3D" target=3D"_blank"><b><span style=3D"text-decoration:none">www.Tende=
+rDetail.com</span></b></a><br>
+                                                                Support Tea=
+m | CNET Technologies | <a href=3D"https://delivery.tenderdetail.com/ANFUXE=
+SBC?id=3D146143=3DIk0BB1IABwUGHlMHB1JTVwdWVw4AVlZUWw9QUAoDX1QAUFUPXlQDBQdaA=
+wdRAlIAXAFIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwGBApKCRBMQ0pcTh5V=
+UwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=3D&amp;fl=3DCUVFR=
+hUMGR5CFRYaQ1UIVgEXUFNCBFpdF1UOCQ=3D=3D" target=3D"_blank"><span style=3D"t=
+ext-decoration:none">TenderDetail.com</span></a><br>
+                                                                Ph : (+91) =
+7600307788,(+91) 7600603344
+                                                                <br>
+                                                                E-mail Id :=
+ <a href=3D"mailto:care@tenderdetail.com" target=3D"_blank"><b><span style=
+=3D"color:#0572af;text-decoration:none">care@tenderdetail.com</span></b></a=
+>
+                                                            </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align=3D"center" style=3D"padding:7=
+.5pt 15.0pt 7.5pt 15.0pt">
+                                        <span style=3D"font-size:8.5pt;font=
+-family:Arial,Helvetica,sans-serif;color:black">
+                                            To
+                                            Unsubscribe Tender Alerts, <a h=
+ref=3D"mailto:unsubscribe@tenderdetail.com" target=3D"_blank">
+                                                click
+                                                here
+                                            </a><br>
+                                            <strong><span style=3D"font-fam=
+ily:Arial,Helvetica,sans-serif">Disclaimer:</span></strong> The information=
+ in this message is confidential and may be privileged. It
+                                            is intended solely for the addr=
+essee. Access to this
+                                            <br>
+                                            message by anyone else is unaut=
+horized. If you are not the intended
+                                            recipient, any disclosure, copy=
+ing, or distribution of the message,
+                                            <br>
+                                            or any action or omission taken=
+ by you in reliance on it, is prohibited and
+                                            may be unlawful.
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       =20
+    </div>
+<img id=3D"m_-1100258183627304524SBBBB" src=3D"https://delivery.tenderdetai=
+l.com/ANFUXESBC?id=3D146143=3DLk0BB1IABwUGHkEUFxBGEkRFFBYWRRMRGRZBRBgTGUZBE=
+REWRhYWERVCQRQXEEYSRFVIXlcXV1hSdhMLWVdPDxJYXlhIV19NBFVXBAYCVwJUVgIOBlwGBApK=
+CRBMQ0pcTh5VUwpfQFRHG09AUl4CVxYBUUJXDF8fWlkMS3l9fzM5dGJ0JQlfVUkUUg=3D=3D"><=
+/div>
+
+
+
+
+
+</div></div>
+
+--000000000000993adf0641069fe9--
+
+--00000000000081a29f064118cc91--
