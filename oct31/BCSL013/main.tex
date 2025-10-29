@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, fit, shadows, backgrounds}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.5in}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{eso-pic}
+\usepackage[absolute,overlay]{textpos}
+
+\begin{document}
+
+\newpage
+\mbox{}
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{
+    \put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{background.jpg}}
+  }%
+}
+
+\thispagestyle{empty}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+\begin{textblock*}{50mm}(112mm, 29mm)
+  \textbf{December}
+\end{textblock*}
+
+\begin{textblock*}{50mm}(145mm, 29mm)
+  \textbf{2025}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 45mm)
+  \textbf{Mark L F Tlau}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 55mm)
+  \textbf{2550670762}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 66mm)
+  \textbf{BCA\_NEW}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 76mm)
+  \textbf{BCSL013}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 85mm)
+  \textbf{07162P}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 95mm)
+  \textbf{Mohyal Education and Research Institute, Qutab Institutional Area, New Delhi}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 109mm)
+  \textbf{+916009341754}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(95mm, 119mm)
+  \textbf{wintersunset95@gmail.com}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(122mm, 144mm)
+  \textbf{(Yes)}
+\end{textblock*}
+
+\clearpage
+
+\begin{enumerate}
+    \item{\textbf{Answer the following in the context of the Linux Operating System. }}
+      \begin{enumerate}
+          \item{\textbf{Write and run the following Linux commands and attach the screenshots of the output of each command. [cite: 278, 279]}}
+            \begin{enumerate}
+                \item{date } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{date.png}
+                \end{figure}
+                
+                \item{man } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{man.png}
+                \end{figure}
+                
+                \item{mv } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{mv.png}
+                \end{figure}
+                \clearpage
+                
+                \item{ln } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{ln.png}
+                \end{figure}
+                
+                \item{chmod } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{chmod.png}
+                \end{figure}
+                
+                \item{find } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{find.png}
+                \end{figure}
+                \clearpage
+                
+                \item{diff } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{diff.png}
+                \end{figure}
+                
+                \item{tail } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{tail.png}
+                \end{figure}
+                
+                \item{pwd } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{pwd.png}
+                \end{figure}
+                \clearpage
+                
+                \item{grep } \\
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=0.8\textwidth]{grep.png}
+                \end{figure}
+            \end{enumerate}
+          \item{\textbf{Create a text file in Linux consisting of 10 lines. Create a copy of this file. Count how many times the
+            word “a” appeared in this file. Display the file permissions of the file created by you. Now, change the
+            file permissions of this file to rw-rw-rw-.}}
+      \end{enumerate}
+    \item{\textbf{Hello there}}
+\end{enumerate}
+
+\end{document}
+
